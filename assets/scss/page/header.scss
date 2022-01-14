@@ -1,0 +1,74 @@
+header{
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  align-items: center;
+  background-color: white;
+
+  padding: 0 30px;
+  border-bottom: 1px solid $green;
+
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+
+  .logo{
+    height: 30px;
+  }
+
+  .links{
+    display: flex;
+    gap: 60px;
+    padding-right: 30px;
+    align-items: center;
+
+    .item{
+      font-weight: 500;
+      position: relative;
+      &::after{
+        content: '';
+        position: absolute;
+        left: -5px;
+        top: -7px;
+        transform: translateX(-100%);
+        width: 17px;
+        height: 29px;
+        background-image: url("images/p_vert_vertical.png");
+        background-repeat: no-repeat;
+      }
+    }
+
+    .item-big{
+      background-color: $green;
+      padding: .5rem 1rem;
+      color: white;
+      border-radius: 5px;
+      margin-left: -20px;
+    }
+
+  }
+
+}
+
+.banner{
+  padding-top: calc(80px + 30px);
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  align-items: center;
+  padding-left: calc(50% - var(--container-width)/ 2);
+  padding-right: calc(50% - var(--container-width)/ 2);
+
+  .img{
+    width: 400px;
+    height: auto;
+  }
+
+  .text{
+    font-size: 80px;
+    line-height: 45px;
+    text-align: center;
+  }
+
+}

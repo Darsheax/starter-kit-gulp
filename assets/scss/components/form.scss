@@ -1,0 +1,47 @@
+.c-form{
+
+  input, textarea{
+    padding: .5em 1em;
+    border: 2px solid rgba($green, .2);
+    border-radius: 5px;
+    outline: none;
+    background-color: rgba($green, .02);
+    font-weight: 600;
+  }
+
+  &-input-group{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: .8rem;
+    &-label{
+      font-weight: 600;
+      opacity: 0.8;
+    }
+  }
+
+  &-textarea-group{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: .8rem;
+    &-label{
+      font-weight: 600;
+      opacity: 0.8;
+    }
+    textarea{
+      resize: none;
+      height: 150px;
+    }
+  }
+
+  &-action__submit{
+    background-color: $green;
+    color: white;
+    font-weight: 500;
+    width: fit-content;
+    padding: .25em 1.75em;
+    border-radius: 5px;
+  }
+
+}

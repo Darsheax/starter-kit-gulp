@@ -1,0 +1,67 @@
+.particulier{
+  &-container{
+
+    &-hero{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(178, 178, 178);
+    }
+
+    &-innerpage{
+
+      &-mission{
+        margin-bottom: 40px;
+      }
+
+      &-contact{
+        margin-bottom: 25px;
+        padding-bottom: 25px;
+        border-bottom: 2px solid $green;
+
+        &-banner{
+          display: flex;
+          background-color: #9ADDF6;
+          padding: 20px 50px;
+          gap: 50px;
+
+          &-img{
+          }
+
+          &-informations{
+            &-title{
+
+            }
+          }
+
+        }
+
+        &-container{
+          transform: translateY(-50px);
+          background-color: white;
+          width: 80%;
+          margin: auto;
+          padding: 30px;
+          box-shadow: 0px 0px 20px rgb(0,0,0,.2);
+
+          &-form{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            &-wrapper_1{
+              display: grid;
+              gap: 20px;
+              grid-template-columns: 1fr 1fr;
+            }
+
+          }
+
+
+        }
+
+      }
+
+    }
+  }
+}

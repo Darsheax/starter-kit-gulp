@@ -1,0 +1,13 @@
+
+section, .section{
+  padding-left: calc(50% - var(--container-width)/ 2);
+  padding-right: calc(50% - var(--container-width)/ 2);
+}
+
+section.section-fw{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.page-container{
+}

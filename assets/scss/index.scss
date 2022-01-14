@@ -1,0 +1,28 @@
+@import "libs/breakpoint";
+@import "settings/variables";
+
+@import "libs/reset";
+@import "libs/container";
+@import "libs/text";
+@import "libs/slider";
+
+@import "components/handwritten";
+@import "components/mission";
+@import "components/article";
+@import "components/page";
+@import "components/title";
+@import "components/form";
+
+@import "page/footer";
+@import "page/header";
+@import "page/homepage";
+@import "page/particulier";
+
+html{
+  scroll-behavior: smooth;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}

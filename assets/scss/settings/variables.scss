@@ -1,0 +1,33 @@
+$green: #2B8E48;
+
+:root{
+
+  @include media('>=desktop') {
+    --font-size: 15px;
+    --space: 12px;
+    --container-padding: 40px;
+    --container-width: calc(#{$desktop} - var(--container-padding) * 2);
+  }
+
+  @include media('>=tablet', '<desktop') {
+    --font-size: 15px;
+    --space: 12px;
+    --container-padding: 40px;
+    --container-width: calc(100vw - var(--container-padding) * 2);
+  }
+
+  @include media('>=phone', '<tablet') {
+    --font-size: 15px;
+    --space: 12px;
+    --container-padding: calc(var(--space)*2);
+    --container-width: calc(100vw - var(--container-padding) * 2);
+  }
+
+  @include media('<phone') {
+    --container-width: calc(100vw - var(--container-padding) * 2);
+    --space: 10px;
+    --container-padding: calc(var(--space)*2);
+    --font-size: 13px;
+  }
+
+}

@@ -1,0 +1,16 @@
+%title-theme{
+  span{color: white;}
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: 200;
+  padding: .5em 0;
+}
+
+.c-title{
+  span{color: $green;}
+  @extend %title-theme;
+}
+
+.c-title-white{
+  @extend %title-theme;
+}

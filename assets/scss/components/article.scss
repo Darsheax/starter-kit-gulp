@@ -1,0 +1,80 @@
+.c-article{
+
+  &-title{
+    text-align: center;
+  }
+
+  &-item{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    &-header{
+
+      &-title{
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+      &-informations{
+        display: flex;
+        color: rgb(0,0,0,.6);
+        gap: 10px;
+      }
+    }
+
+    &-text{
+
+    }
+
+    &-action{
+      display: inline;
+      width: fit-content;
+      padding: .25em .75em;
+      border: 1px solid black;
+    }
+
+  }
+
+  &-item-ghost{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    %ghost{
+      background-color: rgb(241, 241, 241);
+    }
+
+    &-img{
+      height: 200px;
+      max-width: 320px;
+      @extend %ghost;
+    }
+
+    &-line{
+      height: 21px;
+      @extend %ghost;
+      &.line-complet{width: 100%;}
+      &.line-last{width: 65%;}
+    }
+
+    &-action{
+      height: 35px;
+      width: 115px;
+      @extend %ghost;
+    }
+
+    &-header{
+      &-title{
+        width: 80%;
+        height: 21px;
+        @extend %ghost;
+        margin-bottom: 10px;
+      }
+      &-informations{
+        width: 50%;
+        height: 20px;
+        @extend %ghost;
+      }
+    }
+  }
+}
