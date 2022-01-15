@@ -14,7 +14,7 @@ const   imgOUTPUT           = "prod/images/"
 /*==================/
   TASKS
 /==================*/
-exports.image = function image()
+export const image = () =>
 {
     return src(`${imgDIST}/**/*.{jpg,jpeg,png}`)
         .pipe(imagemin([

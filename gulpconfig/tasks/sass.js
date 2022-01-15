@@ -15,7 +15,7 @@ export const   sassOUTPUT      = "prod/"
 /*==================/
   TASKS
 /==================*/
-exports.sassDEV = function sassDEV(o)
+export const sassDEV = (o) =>
 {
     sassFILES.map(function(entry) {
         return src(sassDIST + entry)
@@ -32,17 +32,19 @@ exports.sassDEV = function sassDEV(o)
     o()
 }
 
-exports.sassPROD = function sassPROD()
+export const sassPROD = (o) =>
 {
-    return src(`${sassDIST}index.scss`)
-        .pipe(sourcemaps.init())
-        .pipe(sass({errLogToConsole: true}).on('error', sass.logError))
-        /*.pipe(autoprefixer({
-            cascade: false
-        }))
-        .pipe(cleanCSS())
-        .pipe(rename({extname: '.min.css'}))*/
-        .pipe(sourcemaps.write('.'))
-        .pipe(dest(sassOUTPUT))
-        ;
+    sassFILES.map(function(entry) {
+        return src(sassDIST + entry)
+            .pipe(sourcemaps.init())
+            .pipe(sass({errLogToConsole: true}).on('error', sass.logError))
+            /*.pipe(autoprefixer({
+                cascade: false
+            }))
+            .pipe(cleanCSS())
+            .pipe(rename({extname: '.min.css'}))*/
+            .pipe(sourcemaps.write('.'))
+            .pipe(dest(sassOUTPUT))
+    })
+    o()
 }

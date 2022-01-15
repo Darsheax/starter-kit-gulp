@@ -20,7 +20,7 @@ export const   jsOUTPUT        = "prod/"
 /*==================/
   TASKS
 /==================*/
-exports.jsDEV = function jsDEV(o)
+export const jsDEV = (o) =>
 {
     jsFILES.map(function(entry){
         return browserify({
@@ -38,7 +38,7 @@ exports.jsDEV = function jsDEV(o)
     o()
 }
 
-exports.jsPROD = function jsPROD(o)
+export const jsPROD = (o) =>
 {
     jsFILES.map(function(entry){
         return browserify({
