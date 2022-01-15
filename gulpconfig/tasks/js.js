@@ -1,6 +1,7 @@
 /*==================/
   IMPORTS
 /==================*/
+import  {dest}          from "gulp"
 import  browserify      from "browserify"
 import  babelify        from "babelify"
 import  source          from "vinyl-source-stream"
@@ -12,13 +13,13 @@ import  uglify          from "gulp-uglify"
 /*==================/
   SETTINGS
 /==================*/
-const   jsDIST          = "assets/js/"
-const   jsFILES         = ['index.js']
+export const   jsDIST          = "assets/js/"
+export const   jsFILES         = ['index.js']
+export const   jsOUTPUT        = "prod/"
 
 /*==================/
   TASKS
 /==================*/
-
 exports.jsDEV = function jsDEV(o)
 {
     jsFILES.map(function(entry){
@@ -32,7 +33,7 @@ exports.jsDEV = function jsDEV(o)
             .pipe( sourcemaps.init({loadMaps: true}) )
             .pipe( uglify() )
             .pipe( sourcemaps.write('.') )
-            .pipe( dest('../prod/'))
+            .pipe( dest(jsOUTPUT))
     })
     o()
 }
@@ -50,7 +51,7 @@ exports.jsPROD = function jsPROD(o)
             .pipe( sourcemaps.init({loadMaps: true}) )
             .pipe( uglify() )
             .pipe( sourcemaps.write('.') )
-            .pipe( dest('../prod/'))
+            .pipe( dest(jsOUTPUT))
     })
     o()
 }

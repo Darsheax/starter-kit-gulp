@@ -8,9 +8,9 @@ const   sass            = require('gulp-sass')(require('sass'));
 /*==================/
   SETTINGS
 /==================*/
-const   sassDIST          = "assets/scss/"
-const   sassFILES         = ['index.scss', 'main.scss']
-
+export const   sassDIST        = "assets/scss/"
+export const   sassFILES       = ['index.scss']
+export const   sassOUTPUT      = "prod/"
 
 /*==================/
   TASKS
@@ -27,7 +27,7 @@ exports.sassDEV = function sassDEV(o)
             .pipe(cleanCSS())
             .pipe(rename({extname: '.min.css'}))*/
             .pipe(sourcemaps.write('.'))
-            .pipe(dest('../prod/'))
+            .pipe(dest(sassOUTPUT))
     })
     o()
 }
@@ -43,6 +43,6 @@ exports.sassPROD = function sassPROD()
         .pipe(cleanCSS())
         .pipe(rename({extname: '.min.css'}))*/
         .pipe(sourcemaps.write('.'))
-        .pipe(dest('../prod/'))
+        .pipe(dest(sassOUTPUT))
         ;
 }

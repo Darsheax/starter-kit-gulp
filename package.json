@@ -10,8 +10,8 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.16.7",
-    "@splidejs/splide": "^3.6.9",
     "@babel/preset-env": "^7.16.8",
+    "@splidejs/splide": "^3.6.9",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "babelify": "^10.0.0",

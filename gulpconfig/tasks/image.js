@@ -8,12 +8,13 @@ import  imageminPngquant    from "imagemin-pngquant";
 /*==================/
   SETTINGS
 /==================*/
-const imgDIST = "assets/images"
+const   imgDIST             = "assets/images"
+const   imgOUTPUT           = "prod/images/"
 
 /*==================/
   TASKS
 /==================*/
-exports.image = function image(o)
+exports.image = function image()
 {
     return src(`${imgDIST}/**/*.{jpg,jpeg,png}`)
         .pipe(imagemin([
@@ -25,5 +26,5 @@ exports.image = function image(o)
                 progressive: true
             }),
         ]))
-        .pipe(dest('../prod/images'));
+        .pipe(dest(imgOUTPUT));
 }
