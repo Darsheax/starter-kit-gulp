@@ -20,7 +20,7 @@ exports.image = function image()
         .pipe(imagemin([
             imageminPngquant({
                 speed: 1,
-                quality: [0.95, 1] //lossy settings
+                quality: [0.95, 1]
             }),
             imagemin.mozjpeg({
                 progressive: true

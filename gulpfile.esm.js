@@ -1,40 +1,22 @@
 /*==================/
   IMPORTS
 /==================*/
-import      { parallel, series, watch }  from 'gulp';
-const       browserSync                             = require('browser-sync').create();
+import  { parallel, series, watch }     from 'gulp';
+import  {server, proxy, _reload}        from "./gulpconfig/tasks/server";
 
 /*==================/
   TASKS FILES
 /==================*/
-const {jsDEV, jsPROD, jsDIST} = require('./gulpconfig/tasks/js')
-const {sassDEV, sassPROD, sassDIST} = require('./gulpconfig/tasks/sass')
-const {image} = require('./gulpconfig/tasks/image')
+const   {jsDEV, jsPROD, jsDIST}         = require('./gulpconfig/tasks/js')
+const   {sassDEV, sassPROD, sassDIST}   = require('./gulpconfig/tasks/sass')
+const   {image}                         = require('./gulpconfig/tasks/image')
 
-const browsersyncServe = (o) =>
+/*==================/
+  TASKS
+/==================*/
+const watchTask = () =>
 {
-    /*browserSync.init(null, {
-        proxy: 'http://be-etcb.local/', // Site web url
-        open: false,
-    });*/
-    browserSync.init({
-        server: {
-            baseDir: "./",
-        }
-    });
-    o()
-}
-
-const browsersyncReload = (o) =>
-{
-    browserSync.reload();
-    o()
-}
-
-const watchTask = (o) =>
-{
-    watch([sassDIST + '**/*.scss', jsDIST + '**/*.js'], series(sassDEV, jsDEV, browsersyncReload));
-    o()
+    watch([sassDIST + '**/*.scss', jsDIST + '**/*.js'], series(sassDEV, jsDEV, _reload));
 }
 
 /*==================/
@@ -42,5 +24,5 @@ const watchTask = (o) =>
 /==================*/
 exports.image   = image
 exports.sass    = sassDEV
-exports.dev     = series(parallel(sassDEV, jsDEV), browsersyncServe, watchTask)
+exports.dev     = series(parallel(sassDEV, jsDEV), server, watchTask)
 exports.prod    = parallel(sassPROD, jsPROD)
